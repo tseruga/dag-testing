@@ -1,4 +1,5 @@
 from datetime import timedelta
+from datetime import date
 
 from airflow import DAG
 from airflow.providers.cncf.kubernetes.operators.kubernetes_pod import KubernetesPodOperator
@@ -14,6 +15,7 @@ dag = DAG(
     'python_k8_pod_testing',
     default_args=default_args,
     description='Example cron DAG',
+    start_date=date.today(),
     schedule_interval=timedelta(days=1),
 )
 
