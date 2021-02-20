@@ -15,7 +15,6 @@ dag = DAG(
     default_args=default_args,
     description='Example cron DAG',
     schedule_interval=timedelta(days=1),
-    start_date=days_ago(2),
 )
 
 t1 = KubernetesPodOperator(
