@@ -26,6 +26,5 @@ t1 = KubernetesPodOperator(
     task_id="hello-world",
     get_logs=True,
     name="python-task-pod",
+    dag=dag
 )
-
-t1
