@@ -25,6 +25,7 @@ t1 = KubernetesPodOperator(
     in_cluster=True,
     task_id="hello-world",
     get_logs=True,
+    name="python-task-pod",
 )
 
 
