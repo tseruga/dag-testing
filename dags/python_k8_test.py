@@ -28,4 +28,4 @@ t1 = KubernetesPodOperator(
     name="python-task-pod",
 )
 
-
+t1
