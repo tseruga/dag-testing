@@ -110,7 +110,7 @@ try:
             task_id="task_with_template",
             python_callable=print_stuff,
             executor_config={
-                "pod_template_file": "/usr/local/airflow/pod_templates/basic_template_this_doesnt_exist.yaml",
+                "pod_template_file": "/usr/local/airflow/pod_templates/etl_pod_template.yaml",
                 "pod_override": k8s.V1Pod(metadata=k8s.V1ObjectMeta(labels={"release": "stable"})),
             },
         )
