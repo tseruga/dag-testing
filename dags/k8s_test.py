@@ -66,6 +66,12 @@ try:
             return_code = os.system("cat /foo/volume_mount_test.txt")
             if return_code != 0:
                 raise ValueError(f"Error when checking volume mount. Return code {return_code}")
+        
+        def long_sleep():
+            import time
+            time.sleep(120)
+            print("ALL DONE!")
+            return
 
         # You can use annotations on your kubernetes pods!
         start_task = PythonOperator(
@@ -108,7 +114,7 @@ try:
         # [START task_with_template]
         task_with_template = PythonOperator(
             task_id="task_with_template",
-            python_callable=print_stuff,
+            python_callable=long_sleep,
             executor_config={
                 "pod_template_file": "/usr/local/airflow/pod_templates/etl_pod_template.yaml",
                 "pod_override": k8s.V1Pod(metadata=k8s.V1ObjectMeta(labels={"release": "stable"})),
