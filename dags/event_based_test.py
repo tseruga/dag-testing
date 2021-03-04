@@ -23,7 +23,7 @@ dag = DAG(
 
 watch_drop_prefix = S3PrefixSensor(
     task_id='watch_raw',
-    bucket_name='file-drops',
+    bucket_name='minio-local/file-drops',
     prefix='raw/',
     aws_conn_id='minio',
     dag=dag
