@@ -25,7 +25,7 @@ watch_drop_prefix = S3PrefixSensor(
     task_id='watch_raw',
     bucket_name='file-drops',
     prefix='raw/',
-    aws_conn_id='minio-conn',
+    aws_conn_id='minio',
     dag=dag
 )
 
